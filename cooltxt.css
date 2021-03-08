@@ -1,3 +1,41 @@
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  color: aliceblue;
+  padding: 40vh;
+  border: solid 10px rgb(210, 245, 236);
+}
+
 body {
   background-color: rgb(58, 153, 121);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.span {
+  display: inline-block;
+}
+
+.fadefrombottom {
+  --span: 0s;
+  animation-name: fadefrombottom;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0, 0.73, 0.91, 1.42);
+  animation-delay: calc(var(--span) * 0.01s);
+  animation-fill-mode: both;
+}
+
+@keyframes fadefrombottom {
+  0% {
+    transform: translate(0, 80px);
+    opacity: 0;
+  }
+  80% {
+    transform: translate(0, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
 }
